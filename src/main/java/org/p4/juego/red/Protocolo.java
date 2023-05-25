@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.p4.juego.objetos.Batalla;
 import org.p4.juego.objetos.Jugador;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -82,7 +84,8 @@ public class Protocolo {
         String[] separacion = coordenadas.split(",");
 
         //RESPUESTA
-        System.out.println(separacion[0]);
+
+        JOptionPane.showMessageDialog(null, "REMOTO:" + separacion[0]);
     }
 
     private void comandoPiezas(String linea) {
@@ -126,7 +129,6 @@ public class Protocolo {
         int y = Integer.parseInt(coordXY[1]);
         if (local.matoPieza(x, y)) {
             enviarMensaje(PIEZAS, local.getPiezasParaRed());
-            //enviarMensaje(VIVAS, local.getPiezasVivasParaRed());
             local.notificar();
         }else{
             logger.info("JA JA, no me dio");

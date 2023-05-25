@@ -38,9 +38,11 @@ public class Batalla {
 
         if (piezasVivasRemoto == 0) {
             logger.info("PERDISTE");
+            JOptionPane.showMessageDialog(null, "LOCAL: PERDISTE");
             protocolo.enviarMensaje(FINALIZAR, "Ganaste");
         } else if (piezasVivasLocal == 0) {
             protocolo.enviarMensaje(FINALIZAR, "Perdiste");
+            JOptionPane.showMessageDialog(null, "LOCAL: GANASTE");
             logger.info("GANASTE");
         }
     }

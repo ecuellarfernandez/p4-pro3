@@ -25,12 +25,12 @@ public class Jugador {
         while (!completo) {
             int x = (int) (Math.random() * 285);
             int y = (int) (Math.random() * 385);
-            int r = 5 + (int) (Math.random() * 10);
+            int r = 10 + (int) (Math.random() * 10);
 
             while (!posiblePiezaOk(x, y, resultado)) {
                 x = (int) (Math.random() * 285);
                 y = (int) (Math.random() * 385);
-                r = 5 + (int) (Math.random() * 10);
+                r = 10 + (int) (Math.random() * 10);
             }
 
             resultado[piezasPuestas] = new Pieza(x, y, r, 3);
