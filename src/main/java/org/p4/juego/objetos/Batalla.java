@@ -23,8 +23,8 @@ public class Batalla {
         return instancia;
     }
     private Batalla() {
-        local = new Jugador(Color.blue, 1);
-        remoto = new Jugador(Color.red, 2);
+        local = new Jugador(Color.blue);
+        remoto = new Jugador(Color.red);
         protocolo = null;
     }
 
@@ -34,9 +34,11 @@ public class Batalla {
         int piezasVivasLocal = local.getPiezasVivas();
 
         if (piezasVivasRemoto == 0) {
-            protocolo.enviarMensaje(FINALIZAR, "false");
+            //protocolo.enviarMensaje(FINALIZAR, "false");
+            logger.info("PERDISTE");
         } else if (piezasVivasLocal == 0) {
-            protocolo.enviarMensaje(FINALIZAR, "true");
+            logger.info("GANASTE");
+            //protocolo.enviarMensaje(FINALIZAR, "true");
             //String mensajeGanador = "¡Felicidades! Eres el ganador.";
             //JOptionPane.showMessageDialog(null, mensajeGanador, "Ganador", JOptionPane.INFORMATION_MESSAGE);
         }

@@ -4418,3 +4418,62 @@ java.net.SocketException: Connection reset
 2023-05-25 03:55:18 INFO  :31 - ============================================ Compruebo ganador ============================================
 2023-05-25 03:55:19 INFO  :31 - ============================================ Compruebo ganador ============================================
 2023-05-25 03:55:20 INFO  :31 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:16 INFO  :100 - El usuario abrió el puerto y esta escuchando
+2023-05-25 16:05:20 INFO  :45 - Comienza escuchando el socket
+2023-05-25 16:05:20 INFO  :122 - El usuario se conectó al servidor
+2023-05-25 16:05:20 INFO  :45 - Comienza escuchando el socket
+2023-05-25 16:05:22 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:23 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:23 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:32 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:32 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:32 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:33 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:33 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:34 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:34 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:34 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:34 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:35 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:35 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:36 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:38 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:38 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:38 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:39 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:39 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:39 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:40 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:40 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:41 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:42 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:42 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:05:43 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:06:03 ERROR :70 - Error al procesar la recepcion, cierra todo
+java.net.SocketException: Connection reset
+	at sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313) ~[?:?]
+	at sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340) ~[?:?]
+	at sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789) ~[?:?]
+	at java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at org.p4.juego.red.Protocolo.procesarRecepcion(Protocolo.java:66) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.iniciar(BatallaFrame.java:135) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.esperarConexion(BatallaFrame.java:102) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.lambda$menuArchivo_EsperarConexion$4(BatallaFrame.java:90) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:1589) [?:?]
+2023-05-25 16:21:28 INFO  :100 - El usuario abrió el puerto y esta escuchando
+2023-05-25 16:21:32 INFO  :122 - El usuario se conectó al servidor
+2023-05-25 16:21:32 INFO  :45 - Comienza escuchando el socket
+2023-05-25 16:21:32 INFO  :45 - Comienza escuchando el socket
+2023-05-25 16:21:34 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:21:35 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:21:36 INFO  :32 - ============================================ Compruebo ganador ============================================
+2023-05-25 16:21:37 INFO  :32 - ============================================ Compruebo ganador ============================================

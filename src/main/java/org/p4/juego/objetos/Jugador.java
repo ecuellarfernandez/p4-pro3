@@ -11,13 +11,10 @@ public class Jugador {
     private final Color color;
     private Pieza[] piezas;
     private int piezasVivas;
-    private int id;
-
     private PropertyChangeSupport observado;
-    public Jugador(Color color, int id) {
+    public Jugador(Color color) {
         this.color = color;
         piezas = crearPiezas();
-        this.id = id;
         observado =  new PropertyChangeSupport(this);
         notificar();
     }
@@ -126,26 +123,34 @@ public class Jugador {
         return color;
     }
 
-    public int contarPiezasVivas(){
+    /*
+    * public int contarPiezasVivas(){
         int resultado = 0;
         for (int i = 0; i < 7; i++) {
             if (piezas[i].getEstado() == 1) {
+
+                System.out.println("Qué me esta dando piezas[i] cuando cuento las piezas? " +
+                        piezas[i].getX() +
+                        piezas[i].getY());
+
+                System.out.println("getEstado de piezas: " + resultado);
                 resultado++;
             }
         }
         return resultado;
-    }
+    }*/
 
     public int getPiezasVivas(){
-        return contarPiezasVivas();
+        return this.piezasVivas;
     }
 
     public void setPiezasVivas(int piezasVivas){
         this.piezasVivas = piezasVivas;
     }
 
-    public String getPiezasVivasParaRed() {
+    /*
+    * public String getPiezasVivasParaRed() {
         return String.valueOf(contarPiezasVivas());
-    }
+    }*/
 
 }

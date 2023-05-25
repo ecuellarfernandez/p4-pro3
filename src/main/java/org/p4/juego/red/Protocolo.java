@@ -106,6 +106,7 @@ public class Protocolo {
 
         int i=0;
         int nroPieza = 0;
+        int piezasVivas = 0;
         while(i<35) {
             nroPieza = i / 5;
             int x = Integer.parseInt(coordXY[i + 0]);
@@ -114,7 +115,12 @@ public class Protocolo {
             int estado = Integer.parseInt(coordXY[i + 3]);
             int vidas = Integer.parseInt(coordXY[i + 4]);
 
+            if(estado == 1){
+                piezasVivas++;
+            }
+
             remoto.setPosicionPiezaYEstado(nroPieza, x, y, tamano, vidas, estado);
+            remoto.setPiezasVivas(piezasVivas);
             i+=5;
         }
         remoto.notificar();
@@ -133,7 +139,7 @@ public class Protocolo {
         int y = Integer.parseInt(coordXY[1]);
         if (local.matoPieza(x, y)) {
             enviarMensaje(PIEZAS, local.getPiezasParaRed());
-            enviarMensaje(VIVAS, local.getPiezasVivasParaRed());
+            //enviarMensaje(VIVAS, local.getPiezasVivasParaRed());
             local.notificar();
         }else{
             logger.info("JA JA, no me dio");
