@@ -33,14 +33,15 @@ public class Batalla {
         int piezasVivasRemoto = remoto.getPiezasVivas();
         int piezasVivasLocal = local.getPiezasVivas();
 
+        logger.info("LOCAL: " + piezasVivasLocal);
+        logger.info("REMOTAS: " + piezasVivasRemoto);
+
         if (piezasVivasRemoto == 0) {
-            //protocolo.enviarMensaje(FINALIZAR, "false");
             logger.info("PERDISTE");
+            protocolo.enviarMensaje(FINALIZAR, "Ganaste");
         } else if (piezasVivasLocal == 0) {
+            protocolo.enviarMensaje(FINALIZAR, "Perdiste");
             logger.info("GANASTE");
-            //protocolo.enviarMensaje(FINALIZAR, "true");
-            //String mensajeGanador = "¡Felicidades! Eres el ganador.";
-            //JOptionPane.showMessageDialog(null, mensajeGanador, "Ganador", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 

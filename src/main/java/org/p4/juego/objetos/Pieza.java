@@ -33,9 +33,6 @@ public class Pieza {
         }
         g.setColor(color);
         g.fillOval(x,y, tamano, tamano);
-        //añadir borde
-        //g.setColor(Color.BLACK);
-        //g.drawOval(x,y, tamano, tamano);
     }
     public boolean contiene(int x, int y){
         if (x < (this.x + this.tamano)
@@ -46,6 +43,7 @@ public class Pieza {
         }
         return false;
     }
+
     public void matar(){
         estado = 0;
     }

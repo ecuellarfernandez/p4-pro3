@@ -12,7 +12,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Protocolo {
-    public static final String VIVAS = "VIVAS";
     public static final String FINALIZAR = "FINALIZAR";
     private static Logger logger = LogManager.getRootLogger();
     public static final int PUERTO = 7658;
@@ -46,16 +45,14 @@ public class Protocolo {
             String linea = in.readLine();
             while (!linea.equals(SALIR)) {
                 //logger.info("Recibido: {0}", linea);
-                String regexMsg = "^(" + DISPARO + "|" + PIEZAS + "|" + VIVAS + "|" + FINALIZAR + ")\\s(.+)$";
+                String regexMsg = "^(" + DISPARO + "|" + PIEZAS + "|" + FINALIZAR +")\\s(.+)$";
                 String mensaje = "";
                 if (linea.matches(regexMsg)) {
                     if (linea.startsWith(DISPARO)) {
                         comandoDisparo(linea);
                     } else if(linea.startsWith(PIEZAS)) {
                         comandoPiezas(linea);
-                    }else if(linea.startsWith(VIVAS)){
-                        comandoVivas(linea);
-                    }else if(linea.startsWith(FINALIZAR)){
+                    } else if(linea.startsWith(FINALIZAR)) {
                         comandoFinalizar(linea);
                     }
                     //logger.info("Mensaje: " + mensaje.toString());
@@ -77,25 +74,15 @@ public class Protocolo {
         }
     }
 
-    private void comandoFinalizar(String linea) {
-    }
-
-    private void comandoVivas(String linea) {
-        // Implementa la lógica para procesar el comando VIVAS aquí
+    private void comandoFinalizar(String linea){
+        //Aqui mostraremos si el remoto gana o pierde
         Batalla juego = Batalla.getOrCreate();
         Jugador remoto = juego.getRemoto();
-        String coordenadas = linea.substring(VIVAS.length()).trim();
+        String coordenadas = linea.substring(FINALIZAR.length()).trim();
+        String[] separacion = coordenadas.split(",");
 
-        //leer coordenadas
-        String[] coordXY = coordenadas.split(",");
-        int vidas = Integer.parseInt(coordXY[0]);
-
-        System.out.println("VIDASSSSSS: "+vidas);
-        remoto.setPiezasVivas(vidas);
-        if(vidas == 0){
-            System.out.println("Perdiste");
-        }
-        remoto.notificar();
+        //RESPUESTA
+        System.out.println(separacion[0]);
     }
 
     private void comandoPiezas(String linea) {
@@ -106,7 +93,7 @@ public class Protocolo {
 
         int i=0;
         int nroPieza = 0;
-        int piezasVivas = 0;
+        int vivas = 0;
         while(i<35) {
             nroPieza = i / 5;
             int x = Integer.parseInt(coordXY[i + 0]);
@@ -115,12 +102,12 @@ public class Protocolo {
             int estado = Integer.parseInt(coordXY[i + 3]);
             int vidas = Integer.parseInt(coordXY[i + 4]);
 
+            //Contar cuantas piezas tengo vivas
             if(estado == 1){
-                piezasVivas++;
+                vivas++;
             }
 
             remoto.setPosicionPiezaYEstado(nroPieza, x, y, tamano, vidas, estado);
-            remoto.setPiezasVivas(piezasVivas);
             i+=5;
         }
         remoto.notificar();
