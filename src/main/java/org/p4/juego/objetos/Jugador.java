@@ -3,23 +3,28 @@ package org.p4.juego.objetos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.p4.juego.gui.JugadorPanel;
+import org.p4.juego.objetos.Batalla;
+import org.p4.juego.objetos.Pieza;
+import org.p4.lista.ListaDoble;
 
 import java.awt.*;
 import java.beans.PropertyChangeSupport;
+import java.util.Iterator;
 
 public class Jugador {
     private final Color color;
-    private Pieza[] piezas;
+    private ListaDoble<Pieza> piezas;
     private PropertyChangeSupport observado;
+
     public Jugador(Color color) {
         this.color = color;
         piezas = crearPiezas();
-        observado =  new PropertyChangeSupport(this);
+        observado = new PropertyChangeSupport(this);
         notificar();
     }
 
-    private Pieza[] crearPiezas() {
-        Pieza[] resultado = new Pieza[7];
+    private ListaDoble<Pieza> crearPiezas() {
+        ListaDoble<Pieza> resultado = new ListaDoble<>();
         int piezasPuestas = 0;
         boolean completo = false;
         while (!completo) {
@@ -33,27 +38,22 @@ public class Jugador {
                 r = 10 + (int) (Math.random() * 10);
             }
 
-            resultado[piezasPuestas] = new Pieza(x, y, r, 3);
+            resultado.insertar(new Pieza(x, y, r, 3));
             piezasPuestas++;
-            if (piezasPuestas == 7){
+            if (piezasPuestas == 7) {
                 completo = true;
             }
         }
         return resultado;
     }
 
-    public void addListener(JugadorPanel jugadorPanel){
+    public void addListener(JugadorPanel jugadorPanel) {
         observado.addPropertyChangeListener(jugadorPanel);
     }
 
-    private boolean posiblePiezaOk(int x, int y, Pieza[] resultado) {
-        for (int i = 0; i < 7; i++) {
-            if (resultado[i] == null) {
-                return true;
-            }
-            Pieza p = resultado[i];
-            if (Math.abs(p.getX() - x) < 15 && Math.abs(p.getY() - y) < 15)
-            {
+    private boolean posiblePiezaOk(int x, int y, ListaDoble<Pieza> resultado) {
+        for (Pieza p : resultado) {
+            if (Math.abs(p.getX() - x) < 15 && Math.abs(p.getY() - y) < 15) {
                 return false;
             }
         }
@@ -61,13 +61,13 @@ public class Jugador {
     }
 
     public boolean matoPieza(int x, int y) {
-        for (int i = 0; i < 7; i++) {
-            if (piezas[i].contiene(x, y)) {
-                if (piezas[i].getVidas() > 0) {
-                    piezas[i].setVidas(piezas[i].getVidas() - 1);
+        for (Pieza pieza : piezas) {
+            if (pieza.contiene(x, y)) {
+                if (pieza.getVidas() > 0) {
+                    pieza.setVidas(pieza.getVidas() - 1);
                 }
-                if (piezas[i].getVidas() == 0) {
-                    piezas[i].matar();
+                if (pieza.getVidas() == 0) {
+                    pieza.matar();
                 }
                 Batalla.getOrCreate().comprobarGanador(); // Verificar ganador después de matar la pieza
                 return true;
@@ -76,62 +76,61 @@ public class Jugador {
         return false;
     }
 
-    public void dibujar(Graphics g){
-        for (int i = 0; i < 7; i++) {
-            if (piezas[i].getEstado() == 0 && piezas[i].getVidas() == 0) continue;
-            piezas[i].dibujar(g);
+    public void dibujar(Graphics g) {
+        for (Pieza pieza : piezas) {
+            if (pieza.getEstado() == 0 && pieza.getVidas() == 0) continue;
+            pieza.dibujar(g);
         }
         notificar();
     }
 
-    public String getPiezasParaRed(){
+    public String getPiezasParaRed() {
         StringBuilder resultado = new StringBuilder();
         String separador = "";
-        for (int i = 0; i < 7; i++) {
-
-            Pieza actual = piezas[i];
+        for (Pieza pieza : piezas) {
             resultado.append(separador);
-            resultado.append(actual.getX())
+            resultado.append(pieza.getX())
                     .append(",")
-                    .append(actual.getY())
+                    .append(pieza.getY())
                     .append(",")
-                    .append(actual.getTamano())
+                    .append(pieza.getTamano())
                     .append(",")
-                    .append(actual.getEstado())
+                    .append(pieza.getEstado())
                     .append(",")
-                    .append(actual.getVidas());
+                    .append(pieza.getVidas());
             separador = ",";
-
         }
         return resultado.toString();
     }
 
-    public void setPosicionPiezaYEstado(int i, int x, int y, int tamano,int vidas, int estado){
-        piezas[i].setX(x);
-        piezas[i].setY(y);
-        piezas[i].setTamano(tamano);
-        piezas[i].setVidas(vidas);
-        piezas[i].setEstado(estado);
+    public void setPosicionPiezaYEstado(int i, int x, int y, int tamano, int vidas, int estado) {
+        Pieza pieza = piezas.getIndex(i);
+        pieza.setX(x);
+        pieza.setY(y);
+        pieza.setTamano(tamano);
+        pieza.setVidas(vidas);
+        pieza.setEstado(estado);
     }
 
-    public void notificar(){
-        observado.firePropertyChange("JUEGO", true , false);
+    public void notificar() {
+        observado.firePropertyChange("JUEGO", true, false);
     }
 
     public Color getColor() {
         return color;
     }
-    public int contarPiezasVivas(){
+
+    public int contarPiezasVivas() {
         int resultado = 0;
-        for (int i = 0; i < 7; i++) {
-            if (piezas[i].getEstado() == 1) {
+        for (Pieza pieza : piezas) {
+            if (pieza.getEstado() == 1) {
                 resultado++;
             }
         }
         return resultado;
     }
 
-    public int getPiezasVivas(){
+    public int getPiezasVivas() {
         return contarPiezasVivas();
     }
 

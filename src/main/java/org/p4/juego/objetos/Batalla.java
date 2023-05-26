@@ -3,10 +3,8 @@ package org.p4.juego.objetos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.p4.juego.red.Protocolo;
-
 import javax.swing.*;
 import java.awt.*;
-
 import static org.p4.juego.red.Protocolo.FINALIZAR;
 import static org.p4.juego.red.Protocolo.PIEZAS;
 

@@ -5452,3 +5452,100 @@ java.net.SocketException: Connection reset
 	at org.p4.juego.gui.BatallaFrame.conectar(BatallaFrame.java:123) ~[classes/:?]
 	at org.p4.juego.gui.BatallaFrame.lambda$menuArchivo_Conectar$3(BatallaFrame.java:81) ~[classes/:?]
 	at java.lang.Thread.run(Thread.java:1589) [?:?]
+2023-05-25 20:04:27 INFO  :100 - El usuario abrió el puerto y esta escuchando
+2023-05-25 20:04:31 INFO  :46 - Comienza escuchando el socket
+2023-05-25 20:04:31 INFO  :122 - El usuario se conectó al servidor
+2023-05-25 20:04:31 INFO  :46 - Comienza escuchando el socket
+2023-05-25 20:04:32 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:32 INFO  :34 - LOCAL: 7
+2023-05-25 20:04:32 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:33 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:33 INFO  :34 - LOCAL: 7
+2023-05-25 20:04:33 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:33 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:33 INFO  :34 - LOCAL: 6
+2023-05-25 20:04:33 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:34 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:34 INFO  :34 - LOCAL: 6
+2023-05-25 20:04:34 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:35 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:35 INFO  :34 - LOCAL: 6
+2023-05-25 20:04:35 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:35 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:35 INFO  :34 - LOCAL: 6
+2023-05-25 20:04:35 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:35 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:35 INFO  :34 - LOCAL: 5
+2023-05-25 20:04:35 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:35 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:35 INFO  :34 - LOCAL: 5
+2023-05-25 20:04:35 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:36 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:36 INFO  :34 - LOCAL: 5
+2023-05-25 20:04:36 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:36 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:36 INFO  :34 - LOCAL: 5
+2023-05-25 20:04:36 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:36 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:36 INFO  :34 - LOCAL: 4
+2023-05-25 20:04:36 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:37 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:37 INFO  :34 - LOCAL: 4
+2023-05-25 20:04:37 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:37 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:37 INFO  :34 - LOCAL: 4
+2023-05-25 20:04:37 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:37 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:37 INFO  :34 - LOCAL: 3
+2023-05-25 20:04:37 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:38 INFO  :134 - JA JA, no me dio
+2023-05-25 20:04:38 INFO  :134 - JA JA, no me dio
+2023-05-25 20:04:38 INFO  :134 - JA JA, no me dio
+2023-05-25 20:04:38 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:38 INFO  :34 - LOCAL: 3
+2023-05-25 20:04:38 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:38 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:38 INFO  :34 - LOCAL: 3
+2023-05-25 20:04:38 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:38 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:38 INFO  :34 - LOCAL: 2
+2023-05-25 20:04:39 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:39 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:39 INFO  :34 - LOCAL: 2
+2023-05-25 20:04:39 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:39 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:39 INFO  :34 - LOCAL: 2
+2023-05-25 20:04:39 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:39 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:39 INFO  :34 - LOCAL: 1
+2023-05-25 20:04:39 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:40 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:40 INFO  :34 - LOCAL: 1
+2023-05-25 20:04:40 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:40 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:40 INFO  :34 - LOCAL: 1
+2023-05-25 20:04:40 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:40 INFO  :30 - ============================================ Compruebo ganador ============================================
+2023-05-25 20:04:40 INFO  :34 - LOCAL: 0
+2023-05-25 20:04:40 INFO  :35 - REMOTAS: 7
+2023-05-25 20:04:55 INFO  :44 - GANASTE
+2023-05-25 20:04:57 ERROR :69 - Error al procesar la recepcion, cierra todo
+java.net.SocketException: Connection reset
+	at sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313) ~[?:?]
+	at sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:340) ~[?:?]
+	at sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:789) ~[?:?]
+	at java.net.Socket$SocketInputStream.read(Socket.java:1025) ~[?:?]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333) ~[?:?]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376) ~[?:?]
+	at sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219) ~[?:?]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:173) ~[?:?]
+	at java.io.InputStreamReader.read(InputStreamReader.java:189) ~[?:?]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:?]
+	at java.io.BufferedReader.implReadLine(BufferedReader.java:371) ~[?:?]
+	at java.io.BufferedReader.readLine(BufferedReader.java:348) ~[?:?]
+	at java.io.BufferedReader.readLine(BufferedReader.java:437) ~[?:?]
+	at org.p4.juego.red.Protocolo.procesarRecepcion(Protocolo.java:65) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.iniciar(BatallaFrame.java:135) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.conectar(BatallaFrame.java:123) ~[classes/:?]
+	at org.p4.juego.gui.BatallaFrame.lambda$menuArchivo_Conectar$3(BatallaFrame.java:81) ~[classes/:?]
+	at java.lang.Thread.run(Thread.java:1589) [?:?]
