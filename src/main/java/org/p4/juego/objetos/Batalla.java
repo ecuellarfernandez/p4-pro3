@@ -27,21 +27,20 @@ public class Batalla {
     }
 
     public void comprobarGanador() {
-        logger.info("============================================ Compruebo ganador ============================================");
+        logger.info("========= Compruebo ganador =========");
         int piezasVivasRemoto = remoto.getPiezasVivas();
         int piezasVivasLocal = local.getPiezasVivas();
 
-        logger.info("LOCAL: " + piezasVivasLocal);
-        logger.info("REMOTAS: " + piezasVivasRemoto);
-
         if (piezasVivasRemoto == 0) {
-            logger.info("PERDISTE");
-            JOptionPane.showMessageDialog(null, "LOCAL: PERDISTE");
+            System.out.println("PERDISTE");
             protocolo.enviarMensaje(FINALIZAR, "Ganaste");
+
+            //JOptionPane.showMessageDialog(null, "LOCAL: PERDISTE");
         } else if (piezasVivasLocal == 0) {
             protocolo.enviarMensaje(FINALIZAR, "Perdiste");
-            JOptionPane.showMessageDialog(null, "LOCAL: GANASTE");
-            logger.info("GANASTE");
+            System.out.println("GANASTE");
+
+            //JOptionPane.showMessageDialog(null, "LOCAL: GANASTE");
         }
     }
 

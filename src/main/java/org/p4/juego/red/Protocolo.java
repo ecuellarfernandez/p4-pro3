@@ -84,8 +84,8 @@ public class Protocolo {
         String[] separacion = coordenadas.split(",");
 
         //RESPUESTA
-
-        JOptionPane.showMessageDialog(null, "REMOTO:" + separacion[0]);
+        System.out.println(separacion[0]);
+        //JOptionPane.showMessageDialog(null, "REMOTO:" + separacion[0]);
     }
 
     private void comandoPiezas(String linea) {
